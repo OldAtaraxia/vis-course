@@ -1,7 +1,6 @@
 function bars(data) {
   console.log(data)
-  const width = 600,
-    height = 400;
+  const width = 600, height = 400;
   const margin = { top: 50, right: 20, bottom: 60, left: 40 };
 
   const svg = d3
@@ -21,13 +20,11 @@ function bars(data) {
     .nice()
     .range([height - margin.bottom, margin.top]);
 
-  const xAxis = g =>
-    g
+  const xAxis = g => g
       .attr("transform", `translate(${0}, ${height - margin.bottom})`)
       .call(d3.axisBottom(x).tickSizeOuter(0));
 
-  const yAxis = g =>
-    g
+  const yAxis = g => g
       .attr("transform", `translate(${margin.left}, 0)`)
       .call(d3.axisLeft(y))
       .call(g => g.select(".domain").remove());
