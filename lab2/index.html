@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>2021 Vis</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <script src="./js/bars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/d3-array@1"></script>
+    <script src="https://unpkg.com/d3-collection@1"></script>
+    <script src="https://unpkg.com/d3-path@1"></script>
+    <script src="https://unpkg.com/d3-shape@1"></script>
+    <script src="https://unpkg.com/d3-sankey@0"></script>
+    <style>
+      #content {
+        width: 50%;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .box {
+        width: 100%;
+        max-width: 700px;
+        margin: 2em 0;
+      }
+
+      #logo {
+        color: #ebebd3;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-left: 25%;
+      }
+
+      @media (max-width: 700px) {
+        #logo {
+          margin-left: 10%;
+        }
+
+        #content {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <span id="logo">hello visulization</span>
+    </header>
+    <div id="content">
+      <h1>Lab2</h1>
+      <section>
+        <h2>Visualization Design</h2>
+        <p>
+          
+        </p>
+        <div class="box">
+          <svg id="bar"></svg>
+        </div>
+      </section>
+    <script>
+      d3.csv("./data/data.csv", d3.autoType).then((data) => bars(data));
+    </script>
+  </body>
+</html>
